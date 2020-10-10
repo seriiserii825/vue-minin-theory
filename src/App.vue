@@ -1,30 +1,24 @@
 <template>
   <div>
-    <app-car>
-      <h2 slot="title">Car</h2>
-      <p slot="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, unde!</p>
-    </app-car>
+    <div>
+      <input type="text" v-model.number="data">
+      <p>{{ data }}</p>
+    </div>
   </div>
 </template>
 
 <script>
-import Car from "./Car";
-
 export default {
   data() {
     return {
-      carName: "Fiat",
+      data: 10
     }
   },
-  components: {
-    appCar: Car,
+  watch: {
+    data(value){
+      console.log(value);
+      console.log(typeof value);
+    }
   }
 }
 </script>
-
-
-<style>
-h1 {
-  color: red;
-}
-</style>

@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
+import List from './List'
+Vue.component('app-list', List)
 
-export const eventEmitter = new Vue()
+Vue.filter('toUpperCase', value => value.toUpperCase())
 
 new Vue({
   el: '#app',
